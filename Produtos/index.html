@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Elyssia Modas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="../index.html"><img id="icone" src="../img/Img Elyssia/Logo Elyssia Modas.png" alt="icone-lanas-modas" width="75px"></a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="./index.html">Produtos</a></li>
+                    <li><a href="../Sobre/index.html">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li id="carrinho-2"><a href="../Finalizar compra/Finalizar.html">🛒 Carrinho (<span id="cart-count">0</span>)</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h2 id="nprodutos">Nossos Produtos</h2>
+
+    <div class="filtros">
+        <button onclick="filtrarProdutos('todos')">Todos</button>
+        <br>
+        <button onclick="filtrarProdutos('vestido')">Vestidos</button>
+        <button onclick="filtrarProdutos('calça')">Calças</button>
+        <button onclick="filtrarProdutos('blusa')">Blusa</button>
+        <button onclick="filtrarProdutos('cropped')">Cropped</button>
+    </div>
+    
+    <section id="produtos" class="produtos">
+        
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Calça/Calça Jeans Skinny.jpg" loading="lazy" width="200" alt="Calça Jeans Skinny">
+            <h3>Calça Jeans Skinny</h3>
+            <p>R$ 115,00</p>
+            <button onclick="adicionarAoCarrinho('Calça Jeans Skinny', 115)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Blusa/Blusa Decote V.jpg" loading="lazy" width="200" alt="Blusa Decote V">
+            <h3>Blusa Decote V</h3>
+            <p>R$ 107,00</p>
+            <button onclick="adicionarAoCarrinho('Blusa Decote V', 107)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Vestidos/Vestido Mullet.jpg" loading="lazy" width="200" alt="Vestido Mullet">
+            <h3>Vestido Mullet</h3>
+            <p>R$ 180,00</p>
+            <button onclick="adicionarAoCarrinho('Vestido Mullet', 180)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Calça/calça jeans reta.jpg" loading="lazy" width="200" alt="calça jeans reta">
+            <h3>calça jeans reta</h3>
+            <p>R$ 140,00</p>
+            <button onclick="adicionarAoCarrinho('calça jeans reta', 220)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Blusa/Blusa Social.jpg" loading="lazy" width="200" alt="Blusa Social">
+            <h3>Blusa Social</h3>
+            <p>R$ 70,00</p>
+            <button onclick="adicionarAoCarrinho('Blusa Social', 70)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Vestidos/vestido Floral.webp" loading="lazy" width="200" alt="Vestido Simples">
+            <h3>Vestido Simples</h3>
+            <p>R$ 110,00</p>
+            <button onclick="adicionarAoCarrinho('Vestido Floral', 110)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Cropped/Cropped um Ombro.jpg" loading="lazy" width="200" alt="Cropped um Ombro">
+            <h3>Cropped um Ombro</h3>
+            <p>R$ 109,00</p>
+            <button onclick="adicionarAoCarrinho('Cropped um Ombro', 109)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Calça/Calça Boyfriend.jpg" loading="lazy" width="200" alt="Calça Jeans BoyFriend">
+            <h3>Calça Jeans BoyFriend</h3>
+            <p>R$ 140,00</p>
+            <button onclick="adicionarAoCarrinho('Calça Jeans BoyFriend', 140)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Cropped/Cropped Manga Longa.jpg" loading="lazy" width="200" alt="Cropped Manga Longa">
+            <h3>Cropped Manga Longa</h3>
+            <p>R$ 97,00</p>
+            <button onclick="adicionarAoCarrinho('Cropped Manga Longa', 97)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Vestidos/Vestido Basico.jpeg" loading="lazy" width="200" alt="Vestido Basico Rosa">
+            <h3>Vestido Basico Rosa</h3>
+            <p>R$ 119,00</p>
+            <button onclick="adicionarAoCarrinho('Vestido Basico Rosa', 119)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Blusa/Blusa de Frio Pelucia.jpg" loading="lazy" width="200" alt="Blusa de Frio Pelucia">
+            <h3>Blusa de Frio Pelucia</h3>
+            <p>R$ 180,00</p>
+            <button onclick="adicionarAoCarrinho('Blusa de Frio Pelucia', 180)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Cropped/blusa cropped branca.jpg" loading="lazy" width="200" alt="Cropped Branco">
+            <h3>Cropped Branco</h3>
+            <p>R$ 118,00</p>
+            <button onclick="adicionarAoCarrinho('Cropped Branco', 118)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Vestidos/Vestido Longo.jpg" loading="lazy" width="200" alt="Vestido Longo">
+            <h3>Vestido Longo</h3>
+            <p>R$ 210,00</p>
+            <button onclick="adicionarAoCarrinho('Vestido Longo', 210)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Cropped/Cropped Alcinha Preto.jpg" loading="lazy" width="200" alt="Cropped Alcinha Preto">
+            <h3>Cropped Alcinha Preto</h3>
+            <p>R$ 88,00</p>
+            <button onclick="adicionarAoCarrinho('Cropped Alcinha Preto', 88)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Vestidos/Vestido Manga.jpg" loading="lazy" width="200" alt="Vestido Manga">
+            <h3>Vestido Manga</h3>
+            <p>R$ 279,00</p>
+            <button onclick="adicionarAoCarrinho('Vestido Manga', 279)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Calça/Calça Jeans Destroyed.jpg" loading="lazy" width="200" alt="Calça Jeans Destroyed">
+            <h3>Calça Jeans Destroyed</h3>
+            <p>R$ 169,00</p>
+            <button onclick="adicionarAoCarrinho('Calça Jeans destroyed', 169)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Blusa/Blusa Renda.jpg" loading="lazy" width="200" alt="Blusa Renda">
+            <h3>Blusa Renda</h3>
+            <p>R$ 122,00</p>
+            <button onclick="adicionarAoCarrinho('Blusa Renda', 122)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Vestidos/Vestido Modal.jpg" loading="lazy" width="200" alt="Vestido Modal">
+            <h3>Vestido Modal</h3>
+            <p>R$ 89,00</p>
+            <button onclick="adicionarAoCarrinho('Vestido Modal', 89)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Cropped/Cropped Toamara Que Caia.jpeg" loading="lazy" width="200" alt="Cropped Toamara Que Caia">
+            <h3>Cropped Toamara Que Caia</h3>
+            <p>R$ 110,00</p>
+            <button onclick="adicionarAoCarrinho('Cropped Toamara Que Caia', 110)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Calça/Calça Boot Cut.jpg" loading="lazy" width="200" alt="Calça jeans Boot Cut">
+            <h3>Calça jeans Boot Cut</h3>
+            <p>R$ 172,00</p>
+            <button onclick="adicionarAoCarrinho('Calça jeans Boot Cut', 172)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Blusa/Blusa Henley Azul.jpg" loading="lazy" width="200" alt="Blusa Henley Azul">
+            <h3>Blusa Henley Azul</h3>
+            <p>R$ 82,00</p>
+            <button onclick="adicionarAoCarrinho('Blusa Henley Azul', 82)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Calça/Calça Wide Leg.jpg" loading="lazy" width="200" alt="Calça Wide Leg">
+            <h3>Calça Wide Leg</h3>
+            <p>R$ 172,00</p>
+            <button onclick="adicionarAoCarrinho('Calça Wide Leg', 165)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Blusa/Jaqueta de Couro.jpg" loading="lazy" width="200" alt="Jaqueta de Couro Preta">
+            <h3>Blusa de Couro Preta</h3>
+            <p>R$ 250,00</p>
+            <button onclick="adicionarAoCarrinho('Blusa de Couro Preta', 250)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img class="mullet" src="../img/Roupas/Cropped/Cropped Oversized.jpg" loading="lazy" width="200" alt="Cropped Oversized">
+            <h3>Cropped Oversized</h3>
+            <p>R$ 98,00</p>
+            <button onclick="adicionarAoCarrinho('Cropped Oversized', 98)" class="adicionadoAoCarrinho">Adicionar ao Carrinho</button>
+        </div>
+
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Escolha o tamanho do produto:</p>
+
+            <!-- Opções de tamanho -->
+            <div class="size-options">
+                <button class="size-option" data-size="P">P</button>
+                <button class="size-option" data-size="M">M</button>
+                <button class="size-option" data-size="G">G</button>
+                <button class="size-option" data-size="GG">GG</button>
+            </div>
+            <br>
+            <p id="selected-size">Nenhum tamanho selecionado</p>
+            <button id="confirmar-compra">Confirmar Compra</button>
+        </div>
+    </div>
+
+    <section id="carrinho" class="carrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="lista-carrinho"></ul>
+        <p>Total: R$ <span id="total-preco">0,00</span></p>
+        <a id="Link-finalizar" href="../Finalizar compra/index.html"><button id="finalizar-compra" onclick="abrirModalCompra()" style="display: none;">Finalizar Compra</button></a>
+        <button id="limpar-carrinho" onclick="limparCarrinho()" style="display: none;">Limpar Carrinho</button>
+    </section>
+
+    <footer id="contato">
+        <p>&copy; 2025 Lanas Modas - Todos os direitos reservados.</p>
+        <p>Email: contato@LanasModas.com | Telefone: (11) 9999-9999</p>
+    </footer>
+</body>
+</html>

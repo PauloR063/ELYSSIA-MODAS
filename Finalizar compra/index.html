@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="../index.html"><img id="icone" src="../img/Img Elyssia/Logo Elyssia Modas.png" alt="icone-lanas-modas" width="70"></a>
+            <nav>
+                <ul>
+                    <li><a href="../Produtos/index.html">Produtos</a></li>
+                    <li><a href="../Sobre/index.html">Sobre</a></li>
+                    <li><a href="https://wa.me/5511999999999">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="carrinho">
+        <h2>Finalizar Compra</h2>
+        <p>Confira seus produtos antes de concluir a compra.</p>
+        
+        <!-- Resumo do pedido -->
+        <ul id="resumo-pedido"></ul>
+        
+        <p><strong>Total: R$ <span id="total-final"></span></strong></p>
+        
+        <h3>Dados do Cliente</h3>
+        <input type="text" id="nome" placeholder="Nome Completo" required>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <input type="text" id="endereco" placeholder="Endereço" required>
+        
+        <button onclick="confirmarPedido()">Confirmar Pedido</button>
+        <button id="limpar-carrinho" onclick="limparCarrinho()" style="display: none;">Limpar Carrinho</button>
+    </section>
+
+    <footer id="contato">
+        <p>&copy; 2025 Lanas Modas - Todos os direitos reservados.</p>
+        <p>Email: contato@LanasModas.com | Telefone: (11) 9999-9999</p>
+    </footer>
+</body>
+</html>

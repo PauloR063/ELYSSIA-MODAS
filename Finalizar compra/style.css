@@ -1,0 +1,212 @@
+/* Estilização da página de Finalizar Compra */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden; /* Remove a rolagem horizontal */
+}
+
+header {
+    position: absolute;
+    width: 100vw;
+    height: 11vh;
+    top: 0;
+    right: 0;
+    background-color: rgba(2, 2, 2, 0.9);
+    backdrop-filter: blur(2px);
+    color: white;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    margin-left: 30px;
+    width: 90vw;
+    height: 9vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0; 
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #e6006d;
+}
+
+#icone{
+    position: relative;
+    top: 0;
+    left: 10px;
+}
+
+.carrinho {
+    background-color: white;
+    padding: 20px;
+    margin: 90px auto;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.carrinho h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.carrinho ul {
+    list-style: none;
+    padding: 0;
+}
+
+.carrinho ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+#limpar-carrinho {
+    display: none;
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#limpar-carrinho:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+footer {
+    position: relative;
+    right: 30px;
+    top: 30px;
+    width: 100vw;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .carrinho {
+        position: relative;
+        top: 200px;
+        width: 90%;
+    }
+
+    footer{
+        position: relative;
+        top: 550px;
+        width: 98vw;
+    }
+}
+
+@media (max-width: 820px) {
+    .carrinho {
+        position: relative;
+        top: 200px;
+        width: 80%;
+    }
+
+    footer{
+        position: relative;
+        top: 370px;
+        width: 95vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .carrinho {
+        width: 80%;
+    }
+
+    footer{
+        position: relative;
+        top: 220px;
+        width: 95vw;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar{
+        width: 85%;
+    }
+    .carrinho {
+        top: 50px;
+        width: 95%;
+    }
+
+    footer{
+        width: 95vw;
+        top: 50px;
+        height: 100%;
+    }
+}
+
+@media (max-width: 344px) {
+
+    body{
+        overflow-x: hidden; /* Remove a rolagem horizontal */
+    }
+    .carrinho {
+        width: 90%;
+        height: 100%;
+    }
+
+    footer{
+        position: relative;
+        top: 220px;
+        width: 95vw;
+    }
+}
