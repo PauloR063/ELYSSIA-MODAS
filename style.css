@@ -124,6 +124,11 @@ header {
     object-fit: cover;
 }
 
+#carrinho-2{
+    transform: translateY(-10%);
+}
+
+
 #mullet{
     height: 255px;
     object-fit: cover
