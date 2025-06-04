@@ -1,21 +1,35 @@
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];  
+    
+    document.addEventListener("DOMContentLoaded", () => {
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
 
-    let tamanhoSelecionado = null;  // Variável para armazenar o tamanho selecionado
-    let produtoSelecionado = null;  // Variável para armazenar o produto que foi adicionado ao carrinho
+    function mudarSlide() {
+        slides[index].classList.remove("ativo");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("ativo");
+    }
+
+    setInterval(mudarSlide, 3000); // Troca a cada 3 segundos
+});
+    
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];  
+
+let tamanhoSelecionado = null;  // Variável para armazenar o tamanho selecionado
+let produtoSelecionado = null;  // Variável para armazenar o produto que foi adicionado ao carrinho
 
     // Função para adicionar ao carrinho
-    function adicionarAoCarrinho(produto, preco) {
-        // Salva o produto e o preço para uso posterior quando o tamanho for escolhido
-        produtoSelecionado = { produto, preco };
+function adicionarAoCarrinho(produto, preco) {
+    // Salva o produto e o preço para uso posterior quando o tamanho for escolhido
+    produtoSelecionado = { produto, preco };
         
-        // Exibe o modal para selecionar o tamanho
-        modal.style.display = "flex";  // Só exibe o modal quando o botão for clicado
-    }
+    // Exibe o modal para selecionar o tamanho
+    modal.style.display = "flex";  // Só exibe o modal quando o botão for clicado
+}
 
     // Função para salvar no carrinho
-    function salvarCarrinho() {
-        localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    }
+function salvarCarrinho() {
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
 
     // Função para atualizar a lista de produtos no carrinho
 function atualizarCarrinho() {
@@ -64,102 +78,102 @@ function limparCarrinho() {
 }
 
     // Função para remover do carrinho
-    function removerDoCarrinho(index) {
-        carrinho.splice(index, 1);
-        salvarCarrinho();
-        atualizarCarrinho();
-    }
+function removerDoCarrinho(index) {
+    carrinho.splice(index, 1);
+    salvarCarrinho();
+    atualizarCarrinho();
+}
 
     // Código para exibir o tamanho selecionado no modal
-    const modal = document.getElementById("modal");
-    const closeModal = document.querySelector(".close");
-    const sizeOptions = document.querySelectorAll(".size-option");
-    const selectedSizeText = document.getElementById("selected-size");
+const modal = document.getElementById("modal");
+const closeModal = document.querySelector(".close");
+const sizeOptions = document.querySelectorAll(".size-option");
+const selectedSizeText = document.getElementById("selected-size");
 
     // Lógica para quando o modal for aberto
-    document.querySelectorAll(".adicionadoAoCarrinho").forEach(button => {
-        button.addEventListener("click", () => {
-            modal.style.display = "flex";  // Só abre o modal quando o botão é clicado
-        });
+document.querySelectorAll(".adicionadoAoCarrinho").forEach(button => {
+    button.addEventListener("click", () => {
+        modal.style.display = "flex";  // Só abre o modal quando o botão é clicado
     });
+});
 
     // Fechar modal ao clicar no "X"
-    closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
 
     // Fechar modal ao clicar fora do conteúdo
-    modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
+modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
     // Lógica de seleção de tamanho
-    sizeOptions.forEach(option => {
+sizeOptions.forEach(option => {
         option.addEventListener("click", () => {
             // Remove a classe "selected" de todas as opções
-            sizeOptions.forEach(opt => opt.classList.remove("selected"));
+        sizeOptions.forEach(opt => opt.classList.remove("selected"));
 
             // Adiciona "selected" à opção clicada
-            option.classList.add("selected");
+        option.classList.add("selected");
 
             // Atualiza o texto abaixo do modal
-            selectedSizeText.textContent = `Tamanho selecionado: ${option.dataset.size}`;
+        selectedSizeText.textContent = `Tamanho selecionado: ${option.dataset.size}`;
 
             // Armazena o tamanho selecionado
-            tamanhoSelecionado = option.dataset.size;
-        });
+        tamanhoSelecionado = option.dataset.size;
     });
+});
 
     // Lógica para o botão de "Confirmar Compra"
-    document.getElementById("confirmar-compra").addEventListener("click", () => {
+document.getElementById("confirmar-compra").addEventListener("click", () => {
         // Verifica se um tamanho foi selecionado
-        if (!tamanhoSelecionado) {
-            alert("Selecione um tamanho para o produto!");
-            return;
-        }
+    if (!tamanhoSelecionado) {
+        alert("Selecione um tamanho para o produto!");
+        return;
+    }
 
         // Adiciona o produto com o tamanho ao carrinho
-        carrinho.push({ ...produtoSelecionado, tamanho: tamanhoSelecionado });
+    carrinho.push({ ...produtoSelecionado, tamanho: tamanhoSelecionado });
 
-        salvarCarrinho();
-        atualizarCarrinho();
+    salvarCarrinho();
+    atualizarCarrinho();
 
         // Fecha o modal
-        modal.style.display = "none";
+    modal.style.display = "none";
 
         // Limpa as variáveis de tamanho e produto
-        tamanhoSelecionado = null;
-        produtoSelecionado = null;  // Limpa o produto selecionado
-    });
+    tamanhoSelecionado = null;
+    produtoSelecionado = null;  // Limpa o produto selecionado
+});
 
     // Ao carregar a página, garantir que o modal esteja escondido e o carrinho persistente
-    window.addEventListener('load', () => {
-        modal.style.display = "none";  // Modal começa oculto
-        atualizarCarrinho();  // Atualiza o carrinho na primeira carga da página
-    });
+window.addEventListener('load', () => {
+    modal.style.display = "none";  // Modal começa oculto
+    atualizarCarrinho();  // Atualiza o carrinho na primeira carga da página
+});
 
-    function filtrarProdutos(categoria) {
-        let produtos = document.querySelectorAll(".produto");
+function filtrarProdutos(categoria) {
+    let produtos = document.querySelectorAll(".produto");
     
-        produtos.forEach((produto) => {
-            let nome = produto.querySelector("h3").textContent.toLowerCase();
-            if (categoria === "todos") {
-                produto.style.display = "block";
-            } else if (categoria === "vestido" && nome.includes("vestido")) {
-                produto.style.display = "block";
-            } else if (categoria === "calça" && nome.includes("calça")) {
-                produto.style.display = "block";
-            } else if (categoria === "blusa" && nome.includes("blusa")) {
-                produto.style.display = "block";
-            } else if (categoria === "cropped" && nome.includes("cropped")) {
-                produto.style.display = "block";
-            } else {
-                produto.style.display = "none";
-            }
-        });
-    }
+    produtos.forEach((produto) => {
+        let nome = produto.querySelector("h3").textContent.toLowerCase();
+        if (categoria === "todos") {
+            produto.style.display = "block";
+        } else if (categoria === "vestido" && nome.includes("vestido")) {
+            produto.style.display = "block";
+        } else if (categoria === "calça" && nome.includes("calça")) {
+            produto.style.display = "block";
+        } else if (categoria === "blusa" && nome.includes("blusa")) {
+            produto.style.display = "block";
+        } else if (categoria === "cropped" && nome.includes("cropped")) {
+            produto.style.display = "block";
+        } else {
+            produto.style.display = "none";
+        }
+    });
+}
 
 
 

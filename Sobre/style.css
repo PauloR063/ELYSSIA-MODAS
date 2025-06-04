@@ -17,10 +17,11 @@ body {
 
 /* Cabeçalho */
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
-    background-color: rgba(2, 2, 2, 0.8);
+    background-color: rgba(2, 2, 2, 0.9);
+    backdrop-filter: blur(2px);
     padding: 10px 0;
     z-index: 1000;
 }
@@ -167,6 +168,8 @@ footer {
     .navbar {
         flex-direction: column;
         text-align: center;
+        margin-top: 10px;
+        gap: 15px;
     }
     
     .navbar ul {
