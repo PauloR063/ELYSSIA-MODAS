@@ -128,10 +128,10 @@ button:hover {
 }
 
 footer {
-    position: relative;
-    right: 30px;
-    top: 30px;
-    width: 100vw;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
     background-color: #333;
     color: white;
     padding: 20px;
